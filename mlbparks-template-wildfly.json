@@ -25,7 +25,7 @@
       {
          "description": "Git source URI for application",
          "name": "GIT_URI",
-         "value": "https://github.com/jorgemoralespou/openshift3mlbparks.git"
+         "value": "https://github.com/nealef/openshift3mlbparks.git"
       },
       {
          "description": "Git branch/tag reference",
@@ -124,8 +124,8 @@
                "sourceStrategy": {
                   "from": {
                      "kind": "ImageStreamTag",
-                     "namespace": "openshift",
-                     "name": "wildfly:latest"
+                     "namespace": "sinenomine",
+                     "name": "wildfly-s390x:latest"
                   },
                   "env": [
                      {
@@ -178,8 +178,8 @@
                      ],
                      "from": {
                         "kind": "ImageStreamTag",
-                        "namespace": "openshift",
-                        "name": "mongodb:2.6"
+                        "namespace": "sinenomine"
+                        "name": "mongodb-s390x:latest"
                      }
                   }
                },
