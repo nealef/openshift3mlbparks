@@ -208,7 +208,7 @@
                   "containers": [
                      {
                         "name": "${APPLICATION_NAME}-mongodb",
-                        "image": "mongodb",
+                        "image": "docker.io/sinenomine/mongodb",
                         "ports": [
                            {
                               "containerPort": 27017,
