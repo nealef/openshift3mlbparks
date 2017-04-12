@@ -178,7 +178,7 @@
                      ],
                      "from": {
                         "kind": "ImageStreamTag",
-                        "namespace": "sinenomine"
+                        "namespace": "sinenomine",
                         "name": "mongodb-s390x:latest"
                      }
                   }
