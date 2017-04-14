@@ -125,7 +125,7 @@
                   "from": {
                      "kind": "ImageStreamTag",
                      "namespace": "sinenomine",
-                     "name": "wildfly-s390x:latest"
+                     "name": "wildfly-101-centos7:latest"
                   },
                   "env": [
                      {
@@ -208,10 +208,16 @@
                   "containers": [
                      {
                         "name": "${APPLICATION_NAME}-mongodb",
-                        "image": "docker.io/sinenomine/mongodb",
+                        "image": "mongodb",
                         "ports": [
                            {
+                              "name": "db",
                               "containerPort": 27017,
+                              "protocol": "TCP"
+                           },
+                           {
+                              "name": "monitor",
+                              "containerPort": 28017,
                               "protocol": "TCP"
                            }
                         ],
@@ -317,6 +323,11 @@
                               "name": "${APPLICATION_NAME}-http",
                               "containerPort": 8080,
                               "protocol": "TCP"
+                           },
+                           {
+                              "name": "${APPLICATION_NAME}-cons",
+                              "containerPort": 9990,
+                              "protocol": "TCP"
                            }
                         ],
                         "readinessProbe": {
@@ -384,8 +395,14 @@
          "spec": {
             "ports": [
                {
+                  "name": "db",
                   "port": 27017,
                   "targetPort": 27017
+               },
+               {
+                  "name": "monitor",
+                  "port": 28017,
+                  "targetPort": 28017
                }
             ],
             "selector": {
