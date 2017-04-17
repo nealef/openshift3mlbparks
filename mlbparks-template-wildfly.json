@@ -179,7 +179,7 @@
                      "from": {
                         "kind": "ImageStreamTag",
                         "namespace": "sinenomine",
-                        "name": "mongodb-s390x:latest"
+                        "name": "mongodb-34-centos7:latest"
                      }
                   }
                },
