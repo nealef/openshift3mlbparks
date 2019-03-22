@@ -28,6 +28,11 @@
          "value": "https://github.com/nealef/openshift3mlbparks.git"
       },
       {
+         "description": "The name of the project where image streams are stored in the registry.",
+         "name": "PROJECT_NAME",
+         "value": "sinenomine"
+      },
+      {
          "description": "Git branch/tag reference",
          "name": "GIT_REF",
          "value": "master"
@@ -124,7 +129,7 @@
                "sourceStrategy": {
                   "from": {
                      "kind": "ImageStreamTag",
-                     "namespace": "sinenomine",
+                     "namespace": "${PROJECT_NAME}",
                      "name": "wildfly-101-centos7:latest"
                   },
                   "env": [
@@ -178,7 +183,7 @@
                      ],
                      "from": {
                         "kind": "ImageStreamTag",
-                        "namespace": "sinenomine",
+                        "namespace": "${PROJECT_NAME}",
                         "name": "mongodb-34-centos7:latest"
                      }
                   }
